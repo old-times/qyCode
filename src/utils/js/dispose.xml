@@ -1,0 +1,886 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<list>
+	<object key="登录">
+		<path>/auth/login</path>
+		<username>dajiang</username>
+		<password>dajiang@123</password>
+	</object>
+	
+	<object key="全国业务板块/车辆管理/设备分析">
+		<path>/business/car_scale</path>
+		<attr_list>
+			<attr name = "tw">
+				<key>carNum</key>
+				<dtl>车辆总数</dtl>
+				<unit>辆</unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>driverNum</key>
+				<dtl>司机总数</dtl>
+				<unit>个</unit>
+			</attr>
+			
+			<attr name = "lb">
+				<key>carScale</key>
+				<option>
+					<key>AUTO</key>
+					<dtl>排名</dtl>
+				</option>
+				
+				<option>
+					<key>carType</key>
+					<dtl>车类型</dtl>
+				</option>
+				
+				<option>
+					<key>carNum</key>
+					<dtl>车数量</dtl>
+				</option>
+				
+				<option>
+					<key>proportion</key>
+					<dtl>占比</dtl>
+				</option>
+				
+			</attr>
+		</attr_list>
+	</object>
+	
+	<object key="全国业务板块/车辆管理/车辆统计">
+		<path>/business/car_statistics</path>
+		<attr_list>
+			<attr name = "tw">
+				<key>insuredNumber</key>
+				<dtl>投保车辆数</dtl>
+				<unit>辆</unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>boardNumber</key>
+				<dtl>上牌车辆数</dtl>
+				<unit>辆</unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>maintenanceNumber</key>
+				<dtl>维保车辆数</dtl>
+				<unit>辆</unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>litre</key>
+				<dtl>加油升数</dtl>
+				<unit>升</unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>carSum</key>
+				<dtl>车辆总数</dtl>
+				<unit>辆</unit>
+				<del_unit>true</del_unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>carAnnualRateOfGrowth</key>
+				<dtl>车辆年增长率</dtl>
+				<del_unit>true</del_unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>usageRate</key>
+				<dtl>使用率</dtl>
+				<del_unit>true</del_unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>driverNum</key>
+				<dtl>司机总数</dtl>
+				<del_unit>true</del_unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>driverAnnualRateOfGrowth</key>
+				<dtl>司机增长率</dtl>
+				<del_unit>true</del_unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>attendanceRate</key>
+				<dtl>月均出勤率</dtl>
+				<del_unit>true</del_unit>
+			</attr>
+			
+		</attr_list>
+	</object>
+	
+	<object key="全国业务板块/业务投资">
+		<path>/business/business_investment</path>
+		<attr_list>
+			<attr name = "tw">
+				<key>business</key>
+				<dtl>业务投资</dtl>
+				<del_unit>true</del_unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>amount</key>
+				<dtl>投资金额</dtl>
+				<del_unit>true</del_unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>project</key>
+				<dtl>投资项目</dtl>
+				<del_unit>true</del_unit>
+			</attr>
+			
+			<attr name = "lb">
+				<key>businessInvestment</key>
+				<option>
+					<key>name</key>
+					<dtl>投资名称</dtl>
+				</option>
+				
+				<option>
+					<key>quantity</key>
+					<dtl>个数</dtl>
+				</option>
+				
+				<option>
+					<key>compare</key>
+					<dtl>环比</dtl>
+				</option>
+				
+				<option>
+					<key>variation</key>
+					<dtl>百分比</dtl>
+				</option>
+				
+			</attr>
+		</attr_list>
+	</object>
+	
+	<object key="全国业务板块/投资趋势">
+		<path>/business/investment_trend</path>
+		<attr_list>
+			<attr name = "tw">
+				<key>quantity</key>
+				<dtl>投资金额</dtl>
+				<unit>元</unit>
+				<get_val_way>sum</get_val_way>
+				<group_by_key>type</group_by_key>
+			</attr>
+			
+			<attr name = "tw">
+				<key>quantity</key>
+				<dtl>中标金额</dtl>
+				<unit>元</unit>
+				<get_val_way>sum</get_val_way>
+				<group_by_key>type</group_by_key>
+			</attr>
+			
+			<attr name = "zxt">
+				<group>type</group>
+				<option>
+					<key>year</key>
+					<dtl>年份</dtl>
+				</option>
+				
+				<option>
+					<key>quantity</key>
+					<dtl>数量</dtl>
+				</option>
+			</attr>
+		</attr_list>
+	</object>
+	
+	<object key="全国业务板块/项目情况">
+		<path>/business/project_condition</path>
+		<attr_list>
+			<attr name = "tw">
+				<key>quantity</key>
+				<dtl>在建项目</dtl>
+				<unit>个</unit>
+				<money_key>contractAmount</money_key>
+				<money_dtl>合同总额</money_dtl>
+				<money_unit>元</money_unit>
+				<get_val_way>get</get_val_way>
+				<get_by_key>projectType</get_by_key>
+			</attr>
+			
+			<attr name = "tw">
+				<key>quantity</key>
+				<dtl>运营项目</dtl>
+				<unit>个</unit>
+				<money_key>contractAmount</money_key>
+				<money_dtl>合同总额</money_dtl>
+				<money_unit>元</money_unit>
+				<get_val_way>get</get_val_way>
+				<get_by_key>projectType</get_by_key>
+			</attr>
+		</attr_list>
+	</object>
+	
+	<object key="全国业务板块/人员管理">
+		<path>/business/person_equipment</path>
+		<attr_list>
+			<attr name = "tw">
+				<key>onlineNumber</key>
+				<dtl>在线设备数目</dtl>
+				<del_unit>true</del_unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>shutdownNumber</key>
+				<dtl>在线设备数目</dtl>
+				<del_unit>true</del_unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>abnormalNumber</key>
+				<dtl>异常设备数</dtl>
+				<unit>个</unit>
+			</attr>
+			
+			<attr name = "zzt">
+				<key>personEquipment</key>
+				<option>
+					<key>type</key>
+					<dtl>业务类型</dtl>
+				</option>
+				
+				<option>
+					<key>quantity</key>
+					<dtl>数量</dtl>
+				</option>
+			</attr>
+		</attr_list>
+	</object>
+	
+	<object key="全国业务板块/中转站/业务总览">
+		<path>/business/transfer_station</path>
+		<attr_list>
+			<attr name = "tw">
+				<key>projectAmount</key>
+				<dtl>项目总数</dtl>
+				<del_unit>true</del_unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>jobNumber</key>
+				<dtl>作业人数</dtl>
+				<del_unit>true</del_unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>transferStation</key>
+				<dtl>转运站点</dtl>
+				<del_unit>true</del_unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>jobLine</key>
+				<dtl>作业线路</dtl>
+				<del_unit>true</del_unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>gateNumber</key>
+				<dtl>闸门数</dtl>
+				<del_unit>true</del_unit>
+			</attr>
+		</attr_list>
+	</object>
+	
+	<object key="全国业务板块/智慧公厕/总览分析">
+		<path>/business/wisdom_public_toilet</path>
+		<attr_list>
+			<attr name = "tw">
+				<key>equipmentSum</key>
+				<dtl>设备总数</dtl>
+				<del_unit>true</del_unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>toiletSum</key>
+				<dtl>公厕总数</dtl>
+				<del_unit>true</del_unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>personSum</key>
+				<dtl>人流总次数</dtl>
+				<del_unit>true</del_unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>airQuality</key>
+				<dtl>实时空气质量等级</dtl>
+				<unit></unit>
+			</attr>
+			
+		</attr_list>
+	</object>
+	
+	<object key="全国业务板块/智慧公厕/设备使用分析">
+		<path>/business/equipment_analysis</path>
+		<attr_list>
+			<attr name = "tw">
+				<key>proportion</key>
+				<dtl>环境检测</dtl>
+				<del_unit>true</del_unit>
+				<get_val_way>get</get_val_way>
+				<get_by_key>type</get_by_key>
+			</attr>
+			
+			<attr name = "tw">
+				<key>proportion</key>
+				<dtl>视频</dtl>
+				<del_unit>true</del_unit>
+				<get_val_way>get</get_val_way>
+				<get_by_key>type</get_by_key>
+			</attr>
+			
+			<attr name = "tw">
+				<key>proportion</key>
+				<dtl>AI智能分类箱</dtl>
+				<del_unit>true</del_unit>
+				<get_val_way>get</get_val_way>
+				<get_by_key>type</get_by_key>
+			</attr>
+		</attr_list>
+	</object>
+	
+	<object key="全国业务板块/业务类型">
+		<path>/business/business_type</path>
+		<attr_list>
+			<attr name = "bzt">
+				<option>
+					<key>type</key>
+					<dtl>业务类型</dtl>
+				</option>
+				
+				<option>
+					<key>quantity</key>
+					<dtl>数量</dtl>
+				</option>
+			</attr>
+		</attr_list>
+	</object>
+	
+	<object key="全国业务板块/服务面积">
+		<path>/business/service_area</path>
+		<attr_list>
+			<attr name = "bzt">
+				<option>
+					<key>type</key>
+					<dtl>业务类型</dtl>
+				</option>
+				
+				<option>
+					<key>quantity</key>
+					<dtl>数量</dtl>
+				</option>
+			</attr>
+		</attr_list>
+	</object>
+	
+	<object key="全国业务板块/作业方式">
+		<path>/business/operating_type</path>
+		<attr_list>
+			<attr name = "zzt">
+				<option>
+					<key>type</key>
+					<dtl>业务类型</dtl>
+				</option>
+				
+				<option>
+					<key>quantity</key>
+					<dtl>数量</dtl>
+				</option>
+			</attr>
+		</attr_list>
+	</object>
+	
+	<object key="全国业务板块/基础设施管理">
+		<path>/business/Infrastructure_management</path>
+		<attr_list>
+			<attr name = "zzt">
+				<option>
+					<key>type</key>
+					<dtl>业务类型</dtl>
+				</option>
+				
+				<option>
+					<key>quantity</key>
+					<dtl>数量</dtl>
+				</option>
+			</attr>
+		</attr_list>
+	</object>
+	
+	<object key="全国业务板块/人流统计分析">
+		<path>/business/statistical_analysis</path>
+		<attr_list>
+			<attr name = "zxt">
+				<group>type</group>
+				<option>
+					<key>month</key>
+					<dtl>月份</dtl>
+				</option>
+				
+				<option>
+					<key>quantity</key>
+					<dtl>数量</dtl>
+				</option>
+			</attr>
+		</attr_list>
+	</object>
+	
+	<object key="全国业务板块/资产管理/设备分析">
+		<path>/business/transport_capacity_analyse</path>
+		<attr_list>
+			<attr name = "tw">
+				<key>attendanceDay</key>
+				<dtl>平均出勤天数</dtl>
+				<del_unit>true</del_unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>drivingTime</key>
+				<dtl>平均出车时长</dtl>
+				<del_unit>true</del_unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>mileage</key>
+				<dtl>月均里程</dtl>
+				<del_unit>true</del_unit>
+			</attr>
+			
+			<attr name = "zzt">
+				<key>transportCapacityAnalyse</key>
+				<option>
+					<key>carType</key>
+					<dtl>车辆类型</dtl>
+				</option>
+				
+				<option>
+					<key>attendanceDay</key>
+					<dtl>平均出勤天数</dtl>
+				</option>
+				
+				<option>
+					<key>comparative</key>
+					<dtl>环比</dtl>
+				</option>
+			</attr>
+		</attr_list>
+		
+	</object>
+	
+	<object key="全国业务板块/运行警报">
+		<path>/business/operational_alarm</path>
+		<attr_list>
+			<attr name = "tw">
+				<key>number</key>
+				<dtl>报警数</dtl>
+				<unit>个</unit>
+				<get_val_way>sum</get_val_way>
+				<group_by_key>type</group_by_key>
+			</attr>
+			
+			<attr name = "tw">
+				<key>number</key>
+				<dtl>未处理</dtl>
+				<unit>个</unit>
+				<get_val_way>sum</get_val_way>
+				<group_by_key>type</group_by_key>
+			</attr>
+			
+			<attr name = "zxt">
+				<group>type</group>
+				<option>
+					<key>month</key>
+					<dtl>月份</dtl>
+				</option>
+				
+				<option>
+					<key>number</key>
+					<dtl>数量</dtl>
+				</option>
+			</attr>
+		</attr_list>
+	</object>
+	
+	<object key="全国业务板块/行车分析">
+		<path>/business/traffic_analysis</path>
+		<attr_list>
+			<attr name = "zzt">
+				<group>type</group>
+				<option>
+					<key>month</key>
+					<dtl>月份</dtl>
+				</option>
+				
+				<option>
+					<key>number</key>
+					<dtl>数量</dtl>
+				</option>
+			</attr>
+		</attr_list>
+	</object>
+	
+	<object key="全国业务板块/人员管理/设备分析">
+		<path>/business/traffic_analysis</path>
+		<attr_list>
+			<attr name = "zzt">
+				<group>type</group>
+				<option>
+					<key>month</key>
+					<dtl>月份</dtl>
+				</option>
+				
+				<option>
+					<key>number</key>
+					<dtl>数量</dtl>
+				</option>
+			</attr>
+		</attr_list>
+	</object>
+	
+	<!-- 城市板块 -->
+	
+	<object key="城市业务板块/基础信息">
+		<path>/business/basic_information</path>
+		<attr_list>
+			<attr name = "tw">
+				<key>projectNumber</key>
+				<dtl>项目数量</dtl>
+				<unit>辆</unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>contractMoney</key>
+				<dtl>合同总金额</dtl>
+				<unit>元</unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>investmentMoney</key>
+				<dtl>投资总金额</dtl>
+				<unit>元</unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>projectOperation</key>
+				<dtl>在运营项目</dtl>
+				<unit>个</unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>projectOperation</key>
+				<dtl>投建项目</dtl>
+				<unit>个</unit>
+			</attr>
+		</attr_list>
+	</object>
+	
+	<object key="城市业务板块/服务概要">
+		<path>/business/basic_information</path>
+		<key>basicInformationServiceOverview</key>
+		<attr_list>
+			<attr name = "tw">
+				<key>coverage</key>
+				<dtl>服务区域</dtl>
+			</attr>
+			
+			<attr name = "tw">
+				<key>natureOfServiceArea</key>
+				<dtl>服务区域性质</dtl>
+			</attr>
+			
+			<attr name = "tw">
+				<key>smartSanitationServices</key>
+				<dtl>是否环卫服务</dtl>
+			</attr>
+			
+			<attr name = "tw">
+				<key>environmentalSanitation</key>
+				<dtl>是否环卫一体化</dtl>
+			</attr>
+			
+		</attr_list>
+	</object>
+	
+	<object key="城市业务板块/服务项目类型">
+		<path>/business/basic_information</path>
+		<attr_list>
+			<attr name = "lb">
+				<key>basicInformationServiceOverview</key>
+				<key_cut_sign>，</key_cut_sign>
+				<option>
+					<key>serviceItemType</key>
+					<dtl>服务项目类型</dtl>
+				</option>
+			</attr>
+		</attr_list>
+	</object>
+	
+	<object key="城市业务板块/人员列表">
+		<path>/business/basic_information</path>
+		<key>basicInformationPersonnelList</key>
+		<attr_list>
+			<attr name = "tw">
+				<key>actualHeadCount</key>
+				<dtl>实际总人数</dtl>
+				<unit>人</unit>
+			</attr>
+			
+			<attr name = "bzt">
+				<key>personnelList</key>
+				<option>
+					<key>post</key>
+					<dtl>职位</dtl>
+				</option>
+				
+				<option>
+					<key>peopleNum</key>
+					<dtl>人数</dtl>
+				</option>
+			</attr>
+		</attr_list>
+	</object>
+	
+	<object key="城市业务板块/员工画像">
+		<path>/business/basic_information</path>
+		<key>basicInformationEmployeePortrait</key>
+		<attr_list>
+			<attr name = "dbx">
+				<group>type</group>
+				<option>
+					<key>dimensionality</key>
+					<dtl>维度</dtl>
+				</option>
+				
+				<option>
+					<key>type</key>
+					<dtl>类型</dtl>
+				</option>
+				
+				<option>
+					<key>quantity</key>
+					<dtl>数量</dtl>
+				</option>
+			</attr>
+		</attr_list>
+	</object>
+	
+	
+	
+	<object key="城市业务板块/数据中心">
+		<path>/business/basic_information</path>
+		<key>basicInformationDataCenter</key>
+		<attr_list>
+			<attr name = "tw">
+				<key>quantityOfRefuse</key>
+				<dtl>本月进厂量</dtl>
+				<unit>吨</unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>numberOfVisits</key>
+				<dtl>进厂次数</dtl>
+				<unit>次</unit>
+			</attr>
+			
+			<attr name = "zxt">
+				<key>dataCenter</key>
+				<group>type</group>
+				<option>
+					<key>month</key>
+					<dtl>月份</dtl>
+				</option>
+				
+				<option>
+					<key>quantity</key>
+					<dtl>数量</dtl>
+				</option>
+			</attr>
+		</attr_list>
+	</object>
+	
+	<object key="城市业务板块/公厕情况">
+		<path>/business/basic_information</path>
+		<key>basicInformationPublicToiletCondition</key>
+		<attr_list>
+			<attr name = "tw">
+				<key>waterToilet</key>
+				<dtl>水厕（环保）/座</dtl>
+				<unit>座</unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>aquaPrivies</key>
+				<dtl>旱厕（环保）/座</dtl>
+				<unit>座</unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>portablePublicToilet</key>
+				<dtl>移动厕所（环保）/座</dtl>
+				<unit>座</unit>
+			</attr>
+			
+			<attr name = "lb">
+				<key>publicToiletCondition</key>
+				
+				<option>
+					<key>name</key>
+					<dtl>名称</dtl>
+				</option>
+				
+				<option>
+					<key>address</key>
+					<dtl>地址</dtl>
+				</option>
+			</attr>
+			
+		</attr_list>
+	</object>
+	
+	<object key="城市业务板块/垃圾收运">
+		<path>/business/basic_information</path>
+		<key>basicInformationRubbishTransport</key>
+		<attr_list>
+			<attr name = "tw">
+				<key>cityRubbishTransport</key>
+				<dtl>城市垃圾收运量</dtl>
+				<unit>吨 / 日</unit>
+			</attr>
+			
+			<attr name = "tw">
+				<key>villageRubbishTransport</key>
+				<dtl>乡村垃圾收运量</dtl>
+				<unit>吨 / 日</unit>
+			</attr>
+		</attr_list>
+	</object>
+	
+	<object key="城市业务板块/车辆列表">
+		<path>/business/basic_information</path>
+		<key>basicInformationVehicleList</key>
+		<attr_list>
+			<attr name = "lb">
+				<key>vehicleList</key>
+				
+				<option>
+					<key>licensePlateNumber</key>
+					<dtl>车牌号</dtl>
+				</option>
+				
+				<option>
+					<key>type</key>
+					<dtl>车辆类型</dtl>
+				</option>
+				
+				<option>
+					<key>jobLength</key>
+					<dtl>作业长度</dtl>
+				</option>
+				
+			</attr>
+		</attr_list>
+	</object>
+	
+	<object key="城市业务板块/中转站情况">
+		<path>/business/basic_information</path>
+		<key>basicInformationTransferStationSituation</key>
+		<attr_list>
+			<attr name = "tw">
+				<key>num</key>
+				<dtl>总数量</dtl>
+			</attr>
+			
+			<attr name = "tw">
+				<key>city</key>
+				<dtl>城市（含县城）</dtl>
+			</attr>
+			
+			<attr name = "tw">
+				<key>village</key>
+				<dtl>乡镇</dtl>
+			</attr>
+			
+			<attr name="ts" gkey="item" gval="num">
+				<key>compressionBox</key>
+				<dtl>水平式移动压缩箱</dtl>
+			</attr>
+			
+			<attr name="ts" gkey="item" gval="num">
+				<key>horizontalSplit</key>
+				<dtl>水平式分体压缩箱</dtl>
+			</attr>
+			
+			<attr name="ts" gkey="item" gval="num">
+				<key>verticalType</key>
+				<dtl>垂直式压缩箱</dtl>
+			</attr>
+			
+			<attr name = "lb">
+				<change>tw</change>
+				
+				<option>
+					<key>item</key>
+					<dtl>项目</dtl>
+				</option>
+				
+				<option>
+					<key>num</key>
+					<dtl>数量</dtl>
+				</option>
+			</attr>
+		</attr_list>
+	</object>
+	
+	<object key="城市业务板块/项目风采">
+		<path>/business/basic_information</path>
+		<key>basicInformationProjectStyle</key>
+		<attr_list>
+			<attr name="ts" gkey="name" gval="url">
+				<key>picture1</key>
+				<dtl>图片1</dtl>
+			</attr>
+			
+			<attr name="ts" gkey="name" gval="url">
+				<key>picture2</key>
+				<dtl>图片2</dtl>
+			</attr>
+			
+			<attr name="ts" gkey="name" gval="url">
+				<key>picture3</key>
+				<dtl>图片3</dtl>
+			</attr>
+			
+			<attr name="ts" gkey="name" gval="url">
+				<key>picture4</key>
+				<dtl>图片4</dtl>
+			</attr>
+			
+			<attr name = "lb">
+				<change>tw</change>
+				
+				<option>
+					<key>name</key>
+					<dtl>图片名称</dtl>
+				</option>
+				
+				<option>
+					<key>url</key>
+					<dtl>路径</dtl>
+				</option>
+			</attr>
+		</attr_list>
+	</object>
+</list>

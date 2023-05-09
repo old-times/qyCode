@@ -1,0 +1,102 @@
+@import "z-0.6.less";
+
+/*项目初始化样式*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+p,
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+input,
+textarea,
+button {
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  appearance: none;
+  font-family: inherit;
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+html {
+  box-sizing: border-box;
+  touch-action: none;
+}
+
+html,
+body {
+  width: 8084px;
+  height: 1720px;
+  margin: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a,
+a:hover,
+a:focus,
+a:link {
+  text-decoration: none;
+}
+
+embed,
+iframe,
+img,
+object,
+video {
+  max-width: 100%;
+}
+
+table {
+  .w100();
+  .h100();
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+
+body {
+  font-family: 微软雅黑;
+  .usn(@none: none);
+}
+
+[disabled] {
+  opacity: .8;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.text-center {
+  .tc();
+}
+
+.text-left {
+  .tl();
+}
+
+.text-right {
+  .tr();
+}
