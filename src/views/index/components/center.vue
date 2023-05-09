@@ -87,7 +87,12 @@
                 </div>
             </div>
         </div>
-        <div class="center1">
+        <div class="center1" style="position: relative;">
+            <div class="m-menu">
+              <div class="u-menu">全国首页</div>
+              <div class="u-menu">城市板块</div>
+              <div class="u-menu">业务板块</div>
+            </div>
             <custom-map />
         </div>
         <div class="right1">
@@ -410,7 +415,42 @@ export default {
         }
     }
 
+  //菜单
+  .m-menu {
+    position: absolute;
+    bottom: -67px;
+    left: 50%;
+    width: 2262px;
+    height: 139px;
+    transform: translate(-50%, -50%);
+    padding: 0 20%;
+    background: url(../../../assets/img_menu_bg.png) no-repeat;
+    z-index: 100;
+    &::after{
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      content: url(../../../assets/icon_sjx.png);
+      width: 74px;
+      height: 33px;
+    }
 
+    .u-menu {
+      float: left;
+      width: calc(100% / 3);
+      height: 100%;
+      text-align: center;
+      color: #fff;
+      font-size: 50px;
+      line-height: 150px;
+      cursor: pointer;
+      &:hover{
+        color: #00a2ff;
+      }
+
+    }
+  }
 
 }
 </style>
