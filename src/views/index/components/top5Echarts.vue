@@ -1,5 +1,13 @@
 <template>
-  <div id="topChart111" style="width: 100%; height: 100%"></div>
+  <div class="topS-container">
+    <div class="left-ranking">
+      <div class="ranking-item" v-for="(item,index) in rankList" :key="index">
+        <img :src="item" alt="">
+      </div>
+    </div>  
+    <div id="topChart111" class="echarts-content"></div>
+    <!-- <div id="topChart111" style="width:100%; height: 100%"></div> -->
+  </div>
 </template>
 
 <script>
@@ -12,17 +20,36 @@ export default {
         cityList: [],
         cityData: [],
       },
+      rankList:[
+        require('@/assets/right/top01.png'),
+        require('@/assets/right/top02.png'),
+        require('@/assets/right/top03.png'),
+        require('@/assets/right/top04.png'),
+        require('@/assets/right/top05.png'),
+      ]
     };
   },
   mounted() {
-    this.getZaiTop();
-    this.getData()
+   this.getZaiTop();
+   this.getData()
   },
   methods: {
     // 获取在线设备数TOP5
     getZaiTop() {
-      let res = this.$datautils.getData("全国业务板块/人员管理", "柱状图");
-      res[0].vals.forEach((item) => {
+      // let res = this.$DU.getData("全国业务板块/人员管理", "图文");
+      console.log(res,'在线设备数TOP5')
+      let res = [
+        {
+          vals: [
+            { type: undefined, quantity: "25200个" },
+            { type: undefined, quantity: "59200个" },
+            { type: undefined, quantity: "25200个" },
+            { type: undefined, quantity: "59200个" },
+            { type: undefined, quantity: "25200个" }
+          ]
+        }
+      ];
+      res[0].vals.forEach(item => {
         this.charts.cityList.push(item.type);
         this.charts.cityData.push(item.quantity.split("个")[0]);
       });
@@ -189,5 +216,29 @@ export default {
 };
 </script>
 
-<style>
+<style lang="less" scoped>
+.topS-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: row;
+  .left-ranking {
+    flex: 2;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    .ranking-item{
+      img{
+         width: 100px;
+      }
+     
+    }
+  }
+  .echarts-content {
+    flex: 13;
+    height: 100%;
+  }
+}
 </style>

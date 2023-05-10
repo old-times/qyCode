@@ -8,14 +8,16 @@
           v-for="(item, index) in initData.btnItem"
           :key="index"
           :class="{ active: initData.btnActive == index }"
-          @click="changeBtn(index)">
+          @click="changeBtn(index)"
+        >
           {{ item.name }}
         </el-button>
       </el-button-group>
       <!-- tab1 -->
       <div v-if="initData.btnActive == 0" class="m-2" style="margin-top:30px">
         <div
-          v-for="item in personnelDataStatistics"
+          v-for="(item, index) in personnelDataStatistics"
+          :key="index"
           :class="['m-sjtj', item.bg]"
         >
           <div class="u-name">{{ item.dtl }}</div>
@@ -36,68 +38,20 @@
       </div>
       <!-- 三个站 -->
       <div class="threeStand">
-        <span
-          v-for="(item, index) in standData"
-          :key="index"
-        >{{ item }}</span>
+        <span v-for="(item, index) in standData" :key="index">{{ item }}</span>
       </div>
       <!-- 业务总览 -->
-      <div class="m-2">
+      <div class="m-2" style="height: 420px">
         <HouseTitle :houseTitle="'业务总览'"></HouseTitle>
         <div class="g-w100" style="height:295px">
           <ul>
-            <li class="m-car1">
-              <div class="u-car-icon">
-                <img alt="" src="../../../assets/right/yewu1.png"/>
+            <li class="m-car1" v-for="(item,index) in businessOverview" :key="index">
+              <div class="u-car-icon box-back">
+                <img alt="" :src="item.img" />
               </div>
               <div class="u-car-txt">
-                <div class="u-num">25841</div>
-                <div class="u-txt">项目总数</div>
-              </div>
-            </li>
-            <li class="m-car1">
-              <div class="u-car-icon">
-                <img alt="" src="../../../assets/right/yewu2.png"/>
-              </div>
-              <div class="u-car-txt">
-                <div class="u-num">20871</div>
-                <div class="u-txt">作业人数</div>
-              </div>
-            </li>
-            <li class="m-car1">
-              <div class="u-car-icon">
-                <img alt="" src="../../../assets/right/yewu3.png"/>
-              </div>
-              <div class="u-car-txt">
-                <div class="u-num">25841</div>
-                <div class="u-txt">作业车辆</div>
-              </div>
-            </li>
-            <li class="m-car1">
-              <div class="u-car-icon">
-                <img alt="" src="../../../assets/right/yewu4.png"/>
-              </div>
-              <div class="u-car-txt">
-                <div class="u-num">25841</div>
-                <div class="u-txt">转运站点</div>
-              </div>
-            </li>
-            <li class="m-car1">
-              <div class="u-car-icon">
-                <img alt="" src="../../../assets/right/yewu5.png"/>
-              </div>
-              <div class="u-car-txt">
-                <div class="u-num">25841</div>
-                <div class="u-txt">作业线路</div>
-              </div>
-            </li>
-            <li class="m-car1">
-              <div class="u-car-icon">
-                <img alt="" src="../../../assets/right/yewu6.png"/>
-              </div>
-              <div class="u-car-txt">
-                <div class="u-num">25841</div>
-                <div class="u-txt">闸门数</div>
+                <div class="u-num">{{ item.number }}</div>
+                <div class="u-txt">{{ item.title }}</div>
               </div>
             </li>
           </ul>
@@ -108,12 +62,15 @@
       <LittleTitle :titleName="'智慧公厕'"></LittleTitle>
       <!-- 总览分析 -->
       <div class="m-2">
-        <HouseTitle :houseTitle="'总览分析'" style="margin-top:95px"></HouseTitle>
+        <HouseTitle
+          :houseTitle="'总览分析'"
+          style="margin-top:95px"
+        ></HouseTitle>
         <div class="m-2" style="height:350px">
           <ul style="padding:0 100px">
             <li class="m-car1 m-zlfx">
               <div class="u-car-icon">
-                <img alt="" src="../../../assets/right/rOne1.png"/>
+                <img alt="" src="../../../assets/right/rOne1.png" />
               </div>
               <div class="u-car-txt">
                 <div class="u-num">
@@ -125,7 +82,7 @@
             </li>
             <li class="m-car1 m-zlfx">
               <div class="u-car-icon">
-                <img alt="" src="../../../assets/right/rOne2.png"/>
+                <img alt="" src="../../../assets/right/rOne2.png" />
               </div>
               <div class="u-car-txt">
                 <div class="u-num">
@@ -137,7 +94,7 @@
             </li>
             <li class="m-car1 m-zlfx">
               <div class="u-car-icon">
-                <img alt="" src="../../../assets/right/rOne3.png"/>
+                <img alt="" src="../../../assets/right/rOne3.png" />
               </div>
               <div class="u-car-txt">
                 <div class="u-num">
@@ -149,7 +106,7 @@
             </li>
             <li class="m-car1 m-zlfx">
               <div class="u-car-icon">
-                <img alt="" src="../../../assets/right/rOne4.png"/>
+                <img alt="" src="../../../assets/right/rOne4.png" />
               </div>
               <div class="u-car-txt">
                 <div class="u-num">
@@ -164,8 +121,13 @@
       </div>
       <!-- 设备使用分析 -->
       <div class="m-2">
-        <HouseTitle :fuTitle="'总设备数：14'" :houseTitle="'设备使用分析'"></HouseTitle>
-        <ul style="margin-top:30px;display: flex; justify-content: space-between;">
+        <HouseTitle
+          :fuTitle="'总设备数：14'"
+          :houseTitle="'设备使用分析'"
+        ></HouseTitle>
+        <ul
+          style="margin-top:30px;display: flex; justify-content: space-between;"
+        >
           <li class="m-circle">
             <div class="u-circle">
               <span class="b1">60</span>
@@ -191,7 +153,10 @@
       </div>
       <!-- 人流统计分析 -->
       <div class="m-2">
-        <HouseTitle :houseTitle="'人流统计分析'" style="margin-top:50px"></HouseTitle>
+        <HouseTitle
+          :houseTitle="'人流统计分析'"
+          style="margin-top:50px"
+        ></HouseTitle>
         <div style="width: 100%; height: 320px">
           <personEcharts></personEcharts>
         </div>
@@ -203,8 +168,8 @@
 <script>
 import LittleTitle from "@/components/littleTitle.vue";
 import HouseTitle from "@/components/houseTitle.vue";
-import top5Echarts from './top5Echarts.vue';
-import personEcharts from './personEcharts.vue';
+import top5Echarts from "./top5Echarts.vue";
+import personEcharts from "./personEcharts.vue";
 import equipmentAnalysisRightChart from "./charts/equipmentAnalysisRightChart";
 
 export default {
@@ -213,16 +178,55 @@ export default {
     HouseTitle,
     top5Echarts,
     personEcharts,
-    equipmentAnalysisRightChart,
+    equipmentAnalysisRightChart
   },
   data() {
     return {
       initData: {
         btnActive: 0,
-        btnItem: [{name: "数据统计"}, {name: "设备分析"}]
+        btnItem: [{ name: "数据统计" }, { name: "设备分析" }]
       },
       standData: ["中转站", "压缩站", "垃圾分类"],
-      personnelDataStatistics: [],  //数据统计
+      personnelDataStatistics: [{  //数据统计
+        dtl:'在线设备数',
+        val:'3242434234',
+        bg:'bg1'
+      },{
+        dtl:'在线设备数',
+        val:'3242434234',
+        bg:'bg2'
+      },{
+        dtl:'在线设备数',
+        val:'3242434234',
+        bg:'bg3'
+      }],
+      businessOverview:[
+        {
+          img: require('@/assets/right/yewu1.png'),
+          number: '25841',
+          title: '项目总数'
+        }, {
+          img: require('@/assets/right/yewu2.png'),
+          number: '20871',
+          title: '作业人数'
+        }, {
+          img: require('@/assets/right/yewu3.png'),
+          number: '25841',
+          title: '作业车辆'
+        },  {
+          img: require('@/assets/right/yewu4.png'),
+          number: '25841',
+          title: '转运站点'
+        }, {
+          img: require('@/assets/right/yewu5.png'),
+          number: '25841',
+          title: '作业线路'
+        }, {
+          img: require('@/assets/right/yewu6.png'),
+          number: '25841',
+          title: '闸门数'
+        }
+      ]
     };
   },
   mounted() {
@@ -234,18 +238,19 @@ export default {
       this.initData.btnActive = index;
     },
     getRyshtj() {
-      let res = new DATAUTIL().getData("全国业务板块/人员管理", "图文");
+      let res = this.$DU.getData("全国业务板块/人员管理", "图文");
+      console.log(res, "全国业务板块");
       res.forEach(item => {
         if (item.dtl === "在线设备数目") item.bg = "bg1";
         if (item.dtl === "关机设备数目") item.bg = "bg2";
         if (item.dtl === "异常设备数") item.bg = "bg3";
-      })
+      });
       this.personnelDataStatistics = res;
     },
     getYwzl() {
       let res = new DATAUTIL().getData("全国业务板块/中转站/业务总览", "图文");
-      console.log("全国业务板块/中转站/业务总览", res)
-    },
+      console.log("全国业务板块/中转站/业务总览", res);
+    }
   }
 };
 </script>
@@ -261,6 +266,9 @@ export default {
   .rLeft,
   .rRight {
     flex: 1;
+  }
+
+  .m-btnGroup {
   }
 
   .m-box {
@@ -279,7 +287,8 @@ export default {
       border-bottom: 4px solid rgba(40, 138, 161, 0.5);
 
       &.active {
-        background: rgba(9, 36, 64, 0.7);
+        background: rgba(9, 36, 64, 0.8);
+        border-bottom: 4px solid rgba(28, 110, 196);
       }
     }
   }
@@ -334,7 +343,7 @@ export default {
   }
 
   .top5Cls {
-    margin-top: 35px;
+    margin-top: 135px;
 
     .topList {
       height: 531px;
@@ -368,6 +377,10 @@ export default {
     width: calc(100% / 3 - 36px);
     height: 100px;
     margin: 50px 18px 0;
+    
+    .box-back{
+      background: url("../../../assets/right/icon-back.png");
+    }
 
     &.m-zlfx {
       width: calc(100% / 2 - 36px);
@@ -377,7 +390,12 @@ export default {
       float: left;
       width: 94px;
       height: 83px;
-      padding-top: 20px;
+      // padding-top: 20px;
+      margin-left: -15px;
+      margin-right: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .u-car-txt {
@@ -405,7 +423,7 @@ export default {
       }
     }
   }
-
+  
   // 设备使用分析
   .m-circle {
     width: 291px;
@@ -436,6 +454,5 @@ export default {
       margin-top: -20px;
     }
   }
-
-
-}</style>
+}
+</style>

@@ -1,13 +1,14 @@
 <template>
   <div class="houseTitle">
-    {{ houseTitle }}
+    <span> {{ houseTitle }}</span>
+    <span>{{ fuTitle }}</span>
   </div>
 </template>
 
 <script>
 export default {
   name: "houseTitle",
-  props: ["houseTitle"],
+  props: ["houseTitle","fuTitle"],
 };
 </script>
 
@@ -21,5 +22,8 @@ export default {
   color: white;
   padding-left: 90px;
   line-height: 102px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
 }
 </style>
